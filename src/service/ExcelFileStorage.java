@@ -33,7 +33,7 @@ public class ExcelFileStorage {
 	
 	}
 	public List<Blog> getAllBlogs() {
-		//System.out.println("Getting list");
+		
 		return readExcel();
 	}
 	
@@ -98,7 +98,7 @@ public class ExcelFileStorage {
         }
 
         // Write the output to a file
-        FileOutputStream fileOut = new FileOutputStream("C:\\Users\\malla\\Desktop\\blog.xls");
+        FileOutputStream fileOut = new FileOutputStream("/home/swati/desktop/faceprep/prograd/week-3/day-6/blog.ods");
         
         workbook.write(fileOut);
         
