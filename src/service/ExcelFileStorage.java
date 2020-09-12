@@ -66,14 +66,14 @@ public class ExcelFileStorage {
   
         dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-mm-yyyy"));
 
-       // int rowNum = sheet.getLastRowNum();
-        int rowNum=0;
+        int rowNum = sheet.getLastRowNum();
+//        int rowNum=0;
         for(Blog blogpost: list) {
         	
             Row row = sheet.createRow(++rowNum);
-            row.createCell(0).setCellValue(blog.getBlogTitle());
-            row.createCell(1).setCellValue(blog.getBlogDescription());
-            row.createCell(2).setCellValue(blog.getDate().toString());
+            row.createCell(0).setCellValue(blogpost.getBlogTitle());
+            row.createCell(1).setCellValue(blogpost.getBlogDescription());
+            row.createCell(2).setCellValue(blogpost.getDate().toString());
   /*          
             Cell dateofpost = row.createCell(2);
             dateofpost.setCellValue(blog.getBlog_date());
@@ -87,7 +87,7 @@ public class ExcelFileStorage {
             sheet.autoSizeColumn(i);
         }
 
-        FileOutputStream fileOut = new FileOutputStream("C://Users//vinot//Downloads//blog.xlsx");
+        FileOutputStream fileOut = new FileOutputStream("D:\\blog.xlsx");
         
         workbook.write(fileOut);
         

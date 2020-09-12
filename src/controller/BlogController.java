@@ -35,7 +35,7 @@ public class BlogController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String blogDetails = request.getParameter("selectedAnswers")	;
+		String blogDetails = request.getParameter("selectedAnswers");
 		System.out.println(blogDetails);
 		String[] userBlog=blogDetails.split(",");
 		String title = userBlog[0];
@@ -54,12 +54,13 @@ public class BlogController extends HttpServlet {
 		CheckBlogPost checkBlog=new CheckBlogPost();
 		boolean check=checkBlog.checkBlog(blog);
 		
-		ExcelFileStorage excel=new ExcelFileStorage();
-		excel.insertBlog(blog);
+		
 		
 		System.out.println(check);
 		if(check) {
-			
+			// storing data into excel sheets
+			ExcelFileStorage excel=new ExcelFileStorage();
+			excel.insertBlog(blog);
 			request.setAttribute("blog", blog);
 			request.setAttribute("user",user);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
