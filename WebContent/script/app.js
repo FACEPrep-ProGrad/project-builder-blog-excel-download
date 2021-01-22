@@ -9,11 +9,11 @@ let blogDescription = document.getElementById("blog-description");
 	console.log(blogTitle);
 	console.log(blogDescription);
 
-addBlog.onclick = () =>{
+addBlog.onclick =function add(){
 	console.log("onclick");
 	document.getElementById('popup').style.display = "block";
 } 
-edit.onclick = () =>{
+edit.onclick = function edit(){
 
 	document.getElementById('popup').style.display = "block";
 	
@@ -26,7 +26,7 @@ function div_hide(){
 }
 
 //When submit button is clicked store the text field value to a hidden value and post the form data to server
-postButton.onclick = ()=>{
+postButton.onclick =function post(){
 	var ans=[];
 	let title=document.getElementById("title").value;
 	ans.push(title);
